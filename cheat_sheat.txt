@@ -1,0 +1,60 @@
+## project startup processess
+
+# install git
+sudo apt update
+sudo apt install git -y
+
+# set git identity
+git config --global user.name "Gibexz Andy"
+git config --global user.email "your-email@example.com"
+git config --global credential.helper manager
+
+# create project
+cd ~
+mkdir -p Projects/my_profile_proj
+cd Projects/my_profile_proj
+
+# open in vscode (wsl)
+code .
+
+# initialize git
+git init
+echo "# My Profile Project" > README.md
+git add .
+git commit -m "Initial commit"
+
+# add / fix remote
+git branch -M main
+git remote add origin https://github.com/Gibexz/My-Profile.git
+# or (if already added)
+# git remote set-url origin https://github.com/Gibexz/My-Profile.git
+
+# push
+git push -u origin main
+
+
+
+
+## Postgresql
+sudo apt update
+sudo apt install postgresql postgresql-contrib -y
+psql --version
+
+sudo service postgresql start
+sudo systemctl status postgresql
+sudo service postgresql status
+sudo systemctl stop postgresql
+sudo service postgresql stop
+sudo systemctl restart postgresql
+sudo service postgresql restart
+
+| Task         | Command                             |
+| ------------ | ----------------------------------- |
+| Start        | `sudo service postgresql start`     |
+| Status       | `sudo systemctl status postgresql`  |
+| Stop         | `sudo systemctl stop postgresql`    |
+| Restart      | `sudo systemctl restart postgresql` |
+| Connect test | `sudo -u postgres psql`             |
+
+psql ## Enter PostgreSQL shell:
+
